@@ -710,6 +710,39 @@
             <concatEnumNumeric>Other (describe) (3) enabled</concatEnumNumeric>
             <displayOrder>3</displayOrder>
           </org.rti.zcore.FieldEnumeration>
+          <org.rti.zcore.FieldEnumeration>
+            <id>3308</id>
+            <fieldId>2286</fieldId>
+            <enumeration>Transit patient</enumeration>
+            <numericValue>4</numericValue>
+            <enabled>true</enabled>
+            <concatEnumNumeric>Transit patient (4) enabled</concatEnumNumeric>
+            <displayOrder>4</displayOrder>
+            <uuid>b558cc6c-ae72-4f88-aa1f-9dadf54ed34f</uuid>
+            <locale>en_US</locale>
+          </org.rti.zcore.FieldEnumeration>
+          <org.rti.zcore.FieldEnumeration>
+            <id>3309</id>
+            <fieldId>2286</fieldId>
+            <enumeration>Drugs Refil</enumeration>
+            <numericValue>5</numericValue>
+            <enabled>true</enabled>
+            <concatEnumNumeric>Drugs Refil (5) enabled</concatEnumNumeric>
+            <displayOrder>5</displayOrder>
+            <uuid>da2f1b26-81df-44a0-b404-d4d2f1fe8320</uuid>
+            <locale>en_US</locale>
+          </org.rti.zcore.FieldEnumeration>
+          <org.rti.zcore.FieldEnumeration>
+            <id>3310</id>
+            <fieldId>2286</fieldId>
+            <enumeration>Pep patient</enumeration>
+            <numericValue>6</numericValue>
+            <enabled>true</enabled>
+            <concatEnumNumeric>Pep patient (6) enabled</concatEnumNumeric>
+            <displayOrder>6</displayOrder>
+            <uuid>095d8418-ede3-423c-a431-fd90c8a6aafc</uuid>
+            <locale>en_US</locale>
+          </org.rti.zcore.FieldEnumeration>
         </enumerations>
         <shared>false</shared>
         <starSchemaName>entry_point</starSchemaName>
@@ -726,7 +759,7 @@
       <rows>0</rows>
       <cols>0</cols>
       <visible>true</visible>
-      <visibleEnumIdTrigger1>3295</visibleEnumIdTrigger1>
+      <visibleEnumIdTrigger1>3310</visibleEnumIdTrigger1>
       <visibleDependencies1>2287</visibleDependencies1>
       <visibleEnumIdTrigger2>0</visibleEnumIdTrigger2>
       <selectedEnum>0</selectedEnum>

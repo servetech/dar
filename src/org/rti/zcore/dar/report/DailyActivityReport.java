@@ -175,6 +175,13 @@ public class DailyActivityReport extends Register {
 			    		String code = lineArray[1];
 			    		codeList.add(code);
 			    	}
+		    		
+		    		/*
+		    		 * Add an array to hold OIS items */
+			    	else if (lineArray[0].equals("stock_oi")) {
+			    		String code = lineArray[1];
+			    		codeList.add(code);
+			    	}
 		    	}
 			}
 			itemMap = InventoryUtils.populateItemMap(conn, codeList);
@@ -189,10 +196,33 @@ public class DailyActivityReport extends Register {
 		    		if (lineArray[0].equals("stock_adultFDC")) {
 			    		String code = lineArray[1];
 			    		codeList.add(code);
+			    		
 			    	} else if (lineArray[0].equals("stock_adultSD")) {
 			    		String code = lineArray[1];
 			    		codeList.add(code);
 			    	}
+		    		/*
+		    		 * addd paeds first line 
+		    		 * */
+			    	else if (lineArray[0].equals("stock_paed1")) {
+			    		String code = lineArray[1];
+			    		codeList.add(code);
+			    	} 
+		    		/*
+		    		 * add paeds second line
+		    		 * */
+		    		
+			    	else if(lineArray[0].equals("paed2")) {
+			    		String code = lineArray[1];
+			    		codeList.add(code);
+			    	}
+		    		
+		    		/*add ois*/
+		    		
+			    	else if (lineArray[0].equals("stock_oi")) {
+						String code = lineArray[1];
+						codeList.add(code);
+					} 
 		    	}
 			} 
 			itemMap = InventoryUtils.populateItemMap(conn, codeList);

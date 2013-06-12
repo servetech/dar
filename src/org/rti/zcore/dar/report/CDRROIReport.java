@@ -687,6 +687,7 @@ public class CDRROIReport extends Register {
 									totalDispensedMap.put(key.intValue(), n);
 									totalDispensed.setPyridoxine25mg(n);
 									break;
+							
 								default:
 									break;
 								}
@@ -1226,6 +1227,7 @@ public class CDRROIReport extends Register {
 						quantityRequiredNewPatients.setPyridoxine25mg(stockNew);
 						totalQuantityRequired.setPyridoxine25mg(totalRequired);
 						break;
+					
 					default:
 						break;
 					}

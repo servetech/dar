@@ -46,6 +46,7 @@ public class RegimenChangeReport extends Register {
 			conn = DatabaseUtils.getZEPRSConnection(org.rti.zcore.Constants.DATABASE_ADMIN_USERNAME);
 			rs = getArtRegimens(conn, siteId, beginDate, endDate);
 			while (rs.next()) {
+				
 
 				/*Integer age = rs.getInt("age");
 				String code = rs.getString("code");*/
@@ -54,6 +55,9 @@ public class RegimenChangeReport extends Register {
 				Long patientId = rs.getLong("patient_id");
 				//String districtPatientId = rs.getString("district_patient_id");
 				String firstName = rs.getString("first_name");
+				
+				log.debug(" we have patient First_name in regimen change report " + patientId );
+				
 				String surname = rs.getString("surname");
 				/*Date dateVisit = rs.getDate("date_visit");
 				int currentSiteId = rs.getInt("site_id");

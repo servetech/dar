@@ -70,6 +70,8 @@ public class SiteStatisticsReport  extends Register {
 			stats.setRegimens(regimens);
 			Integer oiPatients = SiteStatisticsDAO.getOIPatients(conn, beginDate, endDate, siteId);
 			stats.setOiPatients(oiPatients);
+			
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

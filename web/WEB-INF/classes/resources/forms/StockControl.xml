@@ -635,7 +635,7 @@
       <form__field>
         <id>2237</id>
         <label>Reference / Notes</label>
-        <type>Text</type>
+        <type>Enum</type>
         <required>false</required>
         <minValue>0</minValue>
         <maxValue>0</maxValue>
@@ -643,7 +643,42 @@
         <displayOrder>2147483647</displayOrder>
         <isEnabled>true</isEnabled>
         <ruleDefinitions/>
-        <enumerations/>
+        <enumerations class="sorted-set">
+          <comparator class="org.rti.zcore.utils.sort.DisplayOrderComparator"/>
+          <org.rti.zcore.FieldEnumeration>
+            <id>3302</id>
+            <fieldId>2237</fieldId>
+            <enumeration>typing error</enumeration>
+            <numericValue>0</numericValue>
+            <enabled>true</enabled>
+            <concatEnumNumeric>typing error (0) enabled</concatEnumNumeric>
+            <displayOrder>0</displayOrder>
+            <uuid>7f0cdf12-f5a8-4f18-9322-eb038cbbb686</uuid>
+            <locale>en_US</locale>
+          </org.rti.zcore.FieldEnumeration>
+          <org.rti.zcore.FieldEnumeration>
+            <id>3303</id>
+            <fieldId>2237</fieldId>
+            <enumeration>issuance</enumeration>
+            <numericValue>1</numericValue>
+            <enabled>true</enabled>
+            <concatEnumNumeric>issuance (1) enabled</concatEnumNumeric>
+            <displayOrder>1</displayOrder>
+            <uuid>d0a7f9b1-f1e1-4eb6-b0fb-c4fad07e6b19</uuid>
+            <locale>en_US</locale>
+          </org.rti.zcore.FieldEnumeration>
+          <org.rti.zcore.FieldEnumeration>
+            <id>3304</id>
+            <fieldId>2237</fieldId>
+            <enumeration>stock lost</enumeration>
+            <numericValue>2</numericValue>
+            <enabled>true</enabled>
+            <concatEnumNumeric>stock lost (2) enabled</concatEnumNumeric>
+            <displayOrder>2</displayOrder>
+            <uuid>7b281295-06cc-45a4-a358-7a13bd2439f4</uuid>
+            <locale>en_US</locale>
+          </org.rti.zcore.FieldEnumeration>
+        </enumerations>
         <shared>false</shared>
         <starSchemaName>notes</starSchemaName>
         <uuid>0317a620-4314-451d-87d2-64bc6060fbd9</uuid>
@@ -651,7 +686,7 @@
       </form__field>
       <formFieldId>2237</formFieldId>
       <displayOrder>13</displayOrder>
-      <inputType>text</inputType>
+      <inputType>select</inputType>
       <closeRow>true</closeRow>
       <columnNumber>0</columnNumber>
       <size>70</size>
@@ -669,7 +704,7 @@
       <highlightCell>false</highlightCell>
       <dropdownTable></dropdownTable>
       <dropdownColumn></dropdownColumn>
-      <dropdownConstraint></dropdownConstraint>
+      <dropdownConstraint>typing error,issuance,stock lost</dropdownConstraint>
       <dropdownOrderByClause></dropdownOrderByClause>
       <fkIdentifier></fkIdentifier>
     </org.rti.zcore.PageItem>

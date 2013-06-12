@@ -44,7 +44,7 @@
     pageContext.setAttribute("quarterPastSql", quarterPastSql);
     // week ahead
     java.util.Calendar c4 = java.util.Calendar.getInstance();
-    c4.add(java.util.Calendar.WEEK_OF_YEAR, +1);
+    c4.add(java.util.Calendar.WEEK_OF_YEAR, +4);
     Date date1weekahead = c4.getTime();
     java.text.SimpleDateFormat sdf4 = new java.text.SimpleDateFormat(DATE_FORMAT);
     sdf2.setTimeZone(TimeZone.getDefault());
@@ -163,8 +163,10 @@ The report will automatically adjust the date range to cover the whole month</p>
     <h2>Reports w/ set time periods</h2>
 
     <ul>
-        <li><html:link action="ChooseReportAction?bdate=${dateNow}&siteId=${theSite}&report=2">ART Adult Daily Activity Report: today</html:link></li>
-        <li><html:link action="ChooseReportAction?bdate=${dateNow}&edate=${date1weekaheadSql}&siteId=${theSite}&report=8">Appointment Register:</html:link> Upcoming Appointments (1 week)</li>
+        <li>
+          <html:link action="ChooseReportAction?bdate=${dateNow}&siteId=${theSite}&report=2">ART Combined Daily Activity Report: today</html:link>
+        </li>
+        <li><html:link action="ChooseReportAction?bdate=${dateNow}&edate=${date1weekaheadSql}&siteId=${theSite}&report=8">Appointment Register:</html:link> Upcoming Appointments (1 month)</li>
         <li><html:link action="ChooseReportAction?siteId=${zeprs_session.clientSettings.siteId}&report=9">Defaulters Register:</html:link> Patients who have missed appointments over the past week</li>
     </ul>
 

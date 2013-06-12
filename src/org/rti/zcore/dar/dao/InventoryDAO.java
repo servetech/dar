@@ -635,8 +635,8 @@ public static StockReport generateStockSummary(Connection conn, Long itemId, Dat
 	Integer posAdjustments = 0;
 	for (StockControl stockControl : stockChanges) {
 		if (stockControl.getBalance() != null) {
-			String notes = stockControl.getNotes();
-			stockControl.setNotes(notes);
+			//String notes = stockControl.getNotes();
+			//stockControl.setNotes(notes);
 		}
 		Integer changeType = stockControl.getType_of_change();
 		Integer quantity = stockControl.getChange_value();
@@ -1063,6 +1063,8 @@ SQLException, ObjectNotFoundException {
 	Integer dispensed = 0;
 	Long itemId = null;
 	StockReport stockReport = null;
+	
+	log.debug(" this is date "+endDate);
 	//if (itemId == 16 || itemId == 12 || itemId == 13 || itemId == 1 ||  itemId == 3) {
 	HashMap<Long,StockReport> map = new HashMap<Long,StockReport>();
 	String datePartStock = "";
@@ -1075,7 +1077,7 @@ SQLException, ObjectNotFoundException {
 	if (siteId == null || siteId == 0) {
 		siteIdPart = "";
 	}
-
+	log.debug(" we are sitePart ID");
 /*	if (endDate != null) {
 		String sql = "SELECT item_id, MIN(encounter.date_visit)  " +
 		"FROM patient_item, encounter, patient " +
@@ -1102,12 +1104,21 @@ SQLException, ObjectNotFoundException {
 	datePartStock +
 	// "AND item_id <= 20 " +
 	"GROUP BY item_id";
+	
 	PreparedStatement ps = conn.prepareStatement(sql);
+	
+	log.debug(" Ps1 Sql created "+endDate);
 	if (siteId == null || siteId == 0) {
+		
+		log.debug(" site id is null ama 0");
 		if (endDate != null) {
+			log.debug(" date is available");
 			ps.setDate(1, endDate);
 		}
+		
+		log.debug(" we passeddate issue");
 	} else {
+		log.debug(" site id is this "+siteId);
 		ps.setInt(1, siteId);
 		if (endDate != null) {
 			ps.setDate(2, endDate);
@@ -1115,18 +1126,36 @@ SQLException, ObjectNotFoundException {
 	}
 
 	ResultSet rs = ps.executeQuery();
+	
+	log.debug(" rs was excecuted");
 	while (rs.next()) {
 		itemId = rs.getLong("item_id");
+		
+		log.debug(" we have itemid "+itemId);
 		stockControlAdditionsTotal = rs.getInt("stockControlAdditionsTotal");
+		
+		log.debug(" we have controlTotal "+stockControlAdditionsTotal);
 		if (map.get(itemId) == null) {
+			
+			
 			stockReport = new StockReport();
+			log.debug(" we ahave loaded stockreport ");
 		} else {
 			stockReport = (StockReport) map.get(itemId);
 		}
 		stockReport.setAdditionsTotal(stockControlAdditionsTotal);
-		map.put(itemId, stockReport);
+
+			map.put(itemId, stockReport);
+		
+		
+		//here1
+	
+		
+		log.debug(" we have put on map ");
 	}
 
+	 
+	
 	sql = "SELECT item_id,  SUM(change_value) AS stockControlDeletionsTotal " +
 	"FROM stock_control, encounter " +
 	"WHERE encounter.id = stock_control.id " +
@@ -1136,33 +1165,70 @@ SQLException, ObjectNotFoundException {
 	//"AND item_id <= 20 " +
 	"GROUP BY item_id";
 	ps = conn.prepareStatement(sql);
+	
+	
 	if (siteId == null || siteId == 0) {
 		if (endDate != null) {
+			
+			log.debug(" date2 is available");
 			ps.setDate(1, endDate);
 		}
 	} else {
+		
 		ps.setInt(1, siteId);
 		if (endDate != null) {
 			ps.setDate(2, endDate);
 		}
 	}
 	rs = ps.executeQuery();
+	
+	log.debug(" rs2 was excecuted");
 	while (rs.next()) {
 		itemId = rs.getLong("item_id");
+		
+		log.debug(" we  have itemId2 "+itemId);
 		stockControlDeletionsTotal = rs.getInt("stockControlDeletionsTotal");
+		
+		log.debug(" wths isdeletion total "+stockControlDeletionsTotal);
+		
+		
 		if (map.get(itemId) == null) {
+			
+			log.debug(" mapitem id is null "+itemId);
+			
+			
 			stockReport = new StockReport();
+			
+			
 		} else {
+			
+			
 			stockReport = (StockReport) map.get(itemId);
+			
+			log.debug(" we loaded stock report");
 		}
 		stockReport.setDeletionsTotal(stockControlDeletionsTotal);
+		
+		log.debug("  detelitiontotal2 was set");
+		//here
+		
+  
 		map.put(itemId, stockReport);
+     
+     //here1
+		
+		log.debug("  we mapped itemid2");
 	}
 	// rs.close();
 	String encounterSiteIdPart = "AND encounter.site_id = ? ";
 	if (siteId == null || siteId == 0) {
+		
+		log.debug("  site id 3 is null or 0");
 		encounterSiteIdPart = "";
 	}
+	
+	log.debug("  the encounter site id "+encounterSiteIdPart);
+	
 	sql = "SELECT item_id, SUM(patient_item.dispensed) AS dispensed " +
 	"FROM patient_item, encounter, patient " +
 	"WHERE encounter.id = patient_item.encounter_id " +
@@ -1172,17 +1238,43 @@ SQLException, ObjectNotFoundException {
 	//"AND item_id <= 20 " +
 	"GROUP BY item_id";
 	ps = conn.prepareStatement(sql);
+	
+	log.debug("  ps4 was created "+sql);
 	if (siteId == null || siteId == 0) {
+		
+		log.debug(" site id 4 is null or 0 "+endDate);
 		if (endDate != null) {
+			log.debug("  date4 is not null "+endDate);
+			
 			ps.setDate(1, endDate);
+			
+			log.debug("  we set the date");
 		}
 	} else {
+		log.debug("  site id has something >0");
+		
 		ps.setInt(1, siteId);
 		if (endDate != null) {
+			
 			ps.setDate(2, endDate);
 		}
 	}
-	rs = ps.executeQuery();
+	
+	
+	try {
+		log.debug("  we are bout to Rs Ps  "+ps.getFetchSize());
+		//rs = ps.executeQuery();
+	
+	
+	
+	
+	
+	
+	 
+	//rs = ps.executeQuery();
+
+	
+	log.debug("  rs querry was created ");
 	while (rs.next()) {
 		itemId = rs.getLong("item_id");
 		dispensed = rs.getInt("dispensed");
@@ -1195,6 +1287,18 @@ SQLException, ObjectNotFoundException {
 		map.put(itemId, stockReport);
 	}
 	rs.close();
+	}
+	//
+	catch (SQLException e) {
+		// TODO Auto-generated catch block
+		log.debug(" this is the sql beats: " + e);
+		e.printStackTrace();
+		
+	}
+	
+
+	
+	log.debug(" db operation ok");
 
 	Set encSet = map.entrySet();
 	for (Iterator iterator = encSet.iterator(); iterator.hasNext();) {
@@ -1217,6 +1321,9 @@ SQLException, ObjectNotFoundException {
 		stockReport.setBalanceBF(balance);
 		stockReport.setOnHand(balance);
 	}
+	
+
+
 	return map;
 }
 
@@ -1285,7 +1392,7 @@ public static List<StockControl> getPatientStockChanges(Connection conn, Long it
 					stockControl.setSurname(surname);
 					stockControl.setFirstName(firstName);
 					stockControl.setDateVisit(dateVisit);
-					stockControl.setNotes(surname + "," + firstName);
+				//	stockControl.setNotes(surname + "," + firstName);
 					stockChanges.add(stockControl);
 				}
 			}
@@ -1357,7 +1464,7 @@ IOException {
 				stockControl.setSurname(surname);
 				stockControl.setFirstName(firstName);
 				stockControl.setDateVisit(dateVisit);
-				stockControl.setNotes(surname + "," + firstName);
+				//stockControl.setNotes(surname + "," + firstName);
 				stockChanges.add(stockControl);
 				stockMap.put(key, stockChanges);
 			}

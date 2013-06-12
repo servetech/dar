@@ -21,6 +21,96 @@
     <uuid>0d520998-5ee6-4a19-927f-526665926d63</uuid>
   </org.rti.zcore.FieldEnumeration>
   <org.rti.zcore.FieldEnumeration>
+    <id>3302</id>
+    <fieldId>2237</fieldId>
+    <enumeration>Typing error</enumeration>
+    <numericValue>1</numericValue>
+    <enabled>true</enabled>
+    <concatEnumNumeric>Typing error (1)</concatEnumNumeric>
+    <displayOrder>1</displayOrder>
+    <uuid>2462f194-77d3-4b28-903e-2157a9064960</uuid>
+  </org.rti.zcore.FieldEnumeration>
+  <org.rti.zcore.FieldEnumeration>
+    <id>3303</id>
+    <fieldId>2237</fieldId>
+    <enumeration>double registration</enumeration>
+    <numericValue>0</numericValue>
+    <enabled>true</enabled>
+    <concatEnumNumeric>double registration (0)</concatEnumNumeric>
+    <displayOrder>0</displayOrder>
+    <uuid>0136df48-f5d5-4d44-a61a-83a609f4f198</uuid>
+  </org.rti.zcore.FieldEnumeration>
+  <org.rti.zcore.FieldEnumeration>
+    <id>3304</id>
+    <fieldId>2237</fieldId>
+    <enumeration>wrong Stock Item</enumeration>
+    <numericValue>2</numericValue>
+    <enabled>true</enabled>
+    <concatEnumNumeric>wrong Stock Item (2)</concatEnumNumeric>
+    <displayOrder>2</displayOrder>
+    <uuid>6ef1814f-a554-4f05-ab98-f471788c9da3</uuid>
+  </org.rti.zcore.FieldEnumeration>
+  <org.rti.zcore.FieldEnumeration>
+    <id>3305</id>
+    <fieldId>201</fieldId>
+    <enumeration>Duplicate</enumeration>
+    <numericValue>6</numericValue>
+    <enabled>true</enabled>
+    <concatEnumNumeric>Duplicate (6)</concatEnumNumeric>
+    <displayOrder>6</displayOrder>
+    <uuid>9bf43501-5292-416d-a4b6-7aca05cf9457</uuid>
+  </org.rti.zcore.FieldEnumeration>
+  <org.rti.zcore.FieldEnumeration>
+    <id>3306</id>
+    <fieldId>201</fieldId>
+    <enumeration>Transfer in</enumeration>
+    <numericValue>7</numericValue>
+    <enabled>true</enabled>
+    <concatEnumNumeric>Transfer in (7)</concatEnumNumeric>
+    <displayOrder>7</displayOrder>
+    <uuid>e9cd4d44-e4a6-4d94-aa50-b20dbec6d6fa</uuid>
+  </org.rti.zcore.FieldEnumeration>
+  <org.rti.zcore.FieldEnumeration>
+    <id>3307</id>
+    <fieldId>201</fieldId>
+    <enumeration>Transfer out</enumeration>
+    <numericValue>8</numericValue>
+    <enabled>true</enabled>
+    <concatEnumNumeric>Transfer out (8)</concatEnumNumeric>
+    <displayOrder>8</displayOrder>
+    <uuid>4e749f22-bcde-41af-a3bd-16bc639bd48e</uuid>
+  </org.rti.zcore.FieldEnumeration>
+  <org.rti.zcore.FieldEnumeration>
+    <id>3308</id>
+    <fieldId>2286</fieldId>
+    <enumeration>Transit patient</enumeration>
+    <numericValue>4</numericValue>
+    <enabled>true</enabled>
+    <concatEnumNumeric>Transit patient (4)</concatEnumNumeric>
+    <displayOrder>4</displayOrder>
+    <uuid>b558cc6c-ae72-4f88-aa1f-9dadf54ed34f</uuid>
+  </org.rti.zcore.FieldEnumeration>
+  <org.rti.zcore.FieldEnumeration>
+    <id>3309</id>
+    <fieldId>2286</fieldId>
+    <enumeration>Drugs Refil</enumeration>
+    <numericValue>5</numericValue>
+    <enabled>true</enabled>
+    <concatEnumNumeric>Drugs Refil (5)</concatEnumNumeric>
+    <displayOrder>5</displayOrder>
+    <uuid>da2f1b26-81df-44a0-b404-d4d2f1fe8320</uuid>
+  </org.rti.zcore.FieldEnumeration>
+  <org.rti.zcore.FieldEnumeration>
+    <id>3310</id>
+    <fieldId>2286</fieldId>
+    <enumeration>Pep patient</enumeration>
+    <numericValue>6</numericValue>
+    <enabled>true</enabled>
+    <concatEnumNumeric>Pep patient (6)</concatEnumNumeric>
+    <displayOrder>6</displayOrder>
+    <uuid>095d8418-ede3-423c-a431-fd90c8a6aafc</uuid>
+  </org.rti.zcore.FieldEnumeration>
+  <org.rti.zcore.FieldEnumeration>
     <id>3299</id>
     <fieldId>201</fieldId>
     <enumeration>Active</enumeration>

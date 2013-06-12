@@ -167,9 +167,9 @@ public class ChooseReportAction extends BaseAction {
          String date1monthpastStr = sdf.format(date1monthpast);
          java.sql.Date date1monthpastSql =  java.sql.Date.valueOf(date1monthpastStr);
 
-         // week behind - for defaulters report
+         // week behind - for defaulter report
          java.util.Calendar c2 = java.util.Calendar.getInstance();
-         c2.add(java.util.Calendar.WEEK_OF_YEAR, -1);
+         c2.add(java.util.Calendar.WEEK_OF_YEAR, -4);
          java.util.Date date1weekpast = c2.getTime();
          sdf.setTimeZone(TimeZone.getDefault());
          String date1weekpastStr = sdf.format(date1weekpast);
@@ -177,7 +177,7 @@ public class ChooseReportAction extends BaseAction {
 
          // week ahead
          java.util.Calendar c4 = java.util.Calendar.getInstance();
-         c4.add(java.util.Calendar.WEEK_OF_YEAR, +1);
+         c4.add(java.util.Calendar.WEEK_OF_YEAR, +4);
          java.util.Date date1weekahead = c4.getTime();
          java.text.SimpleDateFormat sdf2 = new java.text.SimpleDateFormat(DATE_FORMAT);
          sdf2.setTimeZone(TimeZone.getDefault());

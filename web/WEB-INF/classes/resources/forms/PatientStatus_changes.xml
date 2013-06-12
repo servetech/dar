@@ -170,6 +170,39 @@
             <displayOrder>5</displayOrder>
             <locale>en_US</locale>
           </org.rti.zcore.FieldEnumeration>
+          <org.rti.zcore.FieldEnumeration>
+            <id>3305</id>
+            <fieldId>201</fieldId>
+            <enumeration>Duplicate</enumeration>
+            <numericValue>6</numericValue>
+            <enabled>true</enabled>
+            <concatEnumNumeric>Duplicate (6) enabled</concatEnumNumeric>
+            <displayOrder>6</displayOrder>
+            <uuid>9bf43501-5292-416d-a4b6-7aca05cf9457</uuid>
+            <locale>en_US</locale>
+          </org.rti.zcore.FieldEnumeration>
+          <org.rti.zcore.FieldEnumeration>
+            <id>3306</id>
+            <fieldId>201</fieldId>
+            <enumeration>Transfer in</enumeration>
+            <numericValue>7</numericValue>
+            <enabled>true</enabled>
+            <concatEnumNumeric>Transfer in (7) enabled</concatEnumNumeric>
+            <displayOrder>7</displayOrder>
+            <uuid>e9cd4d44-e4a6-4d94-aa50-b20dbec6d6fa</uuid>
+            <locale>en_US</locale>
+          </org.rti.zcore.FieldEnumeration>
+          <org.rti.zcore.FieldEnumeration>
+            <id>3307</id>
+            <fieldId>201</fieldId>
+            <enumeration>Transfer out</enumeration>
+            <numericValue>8</numericValue>
+            <enabled>true</enabled>
+            <concatEnumNumeric>Transfer out (8) enabled</concatEnumNumeric>
+            <displayOrder>8</displayOrder>
+            <uuid>4e749f22-bcde-41af-a3bd-16bc639bd48e</uuid>
+            <locale>en_US</locale>
+          </org.rti.zcore.FieldEnumeration>
         </enumerations>
         <shared>false</shared>
         <starSchemaName>type_of_change</starSchemaName>
@@ -186,7 +219,7 @@
       <rows>0</rows>
       <cols>0</cols>
       <visible>true</visible>
-      <visibleEnumIdTrigger1>0</visibleEnumIdTrigger1>
+      <visibleEnumIdTrigger1>3307</visibleEnumIdTrigger1>
       <visibleDependencies1></visibleDependencies1>
       <visibleEnumIdTrigger2>0</visibleEnumIdTrigger2>
       <selectedEnum>0</selectedEnum>
