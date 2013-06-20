@@ -45,6 +45,8 @@ public class StockControlDAO {
      * Commons Logging instance.
      */
     private static Log log = LogFactory.getFactory().getInstance(StockControlDAO.class);
+    
+  
 
     /**
      * Loops thorough all items and checks if the expiry date is in the next 3 months.
@@ -65,6 +67,8 @@ public class StockControlDAO {
     	} else {
     		expiredStockItems = new ArrayList<StockControl>();
     	}*/
+    	
+    	  log.debug(" we are setting expired stock items ");
 
     	if (DynaSiteObjects.getStatusMap().get("balanceMap") != null) {
     		HashMap<Long,StockReport> balanceMap = (HashMap<Long, StockReport>) DynaSiteObjects.getStatusMap().get("balanceMap");
@@ -232,6 +236,8 @@ public class StockControlDAO {
 
 		Collections.sort(stockAlertList, new DateVisitOrderComparator());
 		DynaSiteObjects.getStatusMap().put("stockAlertList",stockAlertList);
+		
+		log.debug(" we are setting  stock alert list ");
 	}
 
 
@@ -295,6 +301,7 @@ public class StockControlDAO {
 				//stockReport.setExpired(Boolean.TRUE);
 			}
 		}
+		
 		return stock;
 
 	}
@@ -362,6 +369,7 @@ public class StockControlDAO {
     			}
     		}
     		DynaSiteObjects.getStatusMap().put("lowStockItems", lowStockItems);
+    		log.debug(" we are setting low stock items ");
     	}
     }
 

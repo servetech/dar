@@ -2,7 +2,7 @@
     <shortName>Zcore</shortName>
     <fullName>Sample Project</fullName>
     <version>1.2f</version>
-    <readmeFile>C:\Program Files\dar-1.2e\readme.txt</readmeFile>
+    <readmeFile>C:/Program Files/dar-1.2e/readme.txt</readmeFile>
     <componentList>
         <component>
             <name>default</name>

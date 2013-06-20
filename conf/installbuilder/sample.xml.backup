@@ -1,8 +1,7 @@
 <project>
-    <shortName>sample</shortName>
-    <fullName>Sample Project</fullName>
+    <shortName></shortName>
+    <fullName>Zcore Dar</fullName>
     <version>1.0</version>
-    <readmeFile>C:\Program Files\dar-1.2e\readme.txt</readmeFile>
     <componentList>
         <component>
             <name>default</name>
@@ -68,6 +67,7 @@
     </componentList>
     <enableRollback>1</enableRollback>
     <enableTimestamp>1</enableTimestamp>
+    <vendor>Servetech</vendor>
     <parameterList>
         <directoryParameter>
             <name>installdir</name>

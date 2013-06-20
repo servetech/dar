@@ -1,5 +1,8 @@
 package org.rti.zcore.dar.gen;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.rti.zcore.dar.dao.StockControlDAO;
 import org.rti.zcore.dar.gen.*;
 import org.rti.zcore.EncounterData;
 import org.rti.zcore.Patient;
@@ -43,6 +46,8 @@ private Integer balance;	//balance field2248
 private Long last_patient_item_id;	//last_patient_item_id field2249
 private Integer computedBalance;	//computedBalance field2285
 
+private static Log log = LogFactory.getFactory().getInstance(StockControlDAO.class);
+
 
  /**
   * @return
@@ -53,7 +58,12 @@ private Integer computedBalance;	//computedBalance field2285
     }
 
     public void setDate_of_record(Date date_of_record) {
+    	
+    	// add logs
+    	
         this.date_of_record = date_of_record;
+        
+        log.debug(" we are setting Date_of_record in stock control : " + date_of_record );
     }
 
 
@@ -69,7 +79,12 @@ private Integer computedBalance;	//computedBalance field2285
     }
 
     public void setItem_id(Long item_id) {
+
         this.item_id = item_id;
+        
+        log.debug(" we are setting Item_id in stock control : " + item_id );
+        
+        
     }
 
 
@@ -86,6 +101,8 @@ private Integer computedBalance;	//computedBalance field2285
 
     public void setType_of_change(Integer type_of_change) {
         this.type_of_change = type_of_change;
+        
+        log.debug(" we are setting Type_of_change in stock control : " + type_of_change );
     }
 
 
@@ -102,6 +119,9 @@ private Integer computedBalance;	//computedBalance field2285
 
     public void setChange_value(Integer change_value) {
         this.change_value = change_value;
+        
+        log.debug(" we are setting Change_value in stock control : " + change_value );
+        
     }
 
 
@@ -118,6 +138,8 @@ private Integer computedBalance;	//computedBalance field2285
 
     public void setExpiry_date(Date expiry_date) {
         this.expiry_date = expiry_date;
+        
+        log.debug(" we are setting expiry_date in stock control : " + expiry_date );  
     }
 
 
@@ -158,6 +180,7 @@ private Integer computedBalance;	//computedBalance field2285
 
     public void setNotes(Integer notes) {
         this.notes = notes;
+        log.debug(" we are setting notes in stock control : " + notes ); 
     }
 
 
@@ -174,6 +197,7 @@ private Integer computedBalance;	//computedBalance field2285
 
     public void setBalance(Integer balance) {
         this.balance = balance;
+        log.debug(" we are setting balance in stock control : " + balance ); 
     }
 
 
@@ -190,6 +214,8 @@ private Integer computedBalance;	//computedBalance field2285
 
     public void setLast_patient_item_id(Long last_patient_item_id) {
         this.last_patient_item_id = last_patient_item_id;
+        
+        log.debug(" we are setting last_patient_item_id in stock control  : " + last_patient_item_id ); 
     }
 
 
@@ -206,6 +232,8 @@ private Integer computedBalance;	//computedBalance field2285
 
     public void setComputedBalance(Integer computedBalance) {
         this.computedBalance = computedBalance;
+        
+        log.debug(" we are setting computedBalance in stock control : " + computedBalance ); 
     }
 
 
