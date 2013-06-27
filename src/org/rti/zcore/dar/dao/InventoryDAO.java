@@ -1229,6 +1229,21 @@ SQLException, ObjectNotFoundException {
 	
 	log.debug("  the encounter site id "+encounterSiteIdPart);
 	
+	rs.close();
+	
+	//inserting indexes for data normalization.
+		
+ 	   ps = conn.prepareStatement("CREATE INDEX MeshEIndex ON encounter (id,patient_id)");
+	   ps.executeUpdate();
+	    
+	   ps = conn.prepareStatement("CREATE INDEX MeshPIIndex ON patient_item (encounter_id)");
+	   ps.executeUpdate();
+	  
+       ps = conn.prepareStatement("CREATE INDEX MeshPTIndex ON patient (id)");
+	
+	   ps.executeUpdate(); 
+	   
+	
 	sql = "SELECT item_id, SUM(patient_item.dispensed) AS dispensed " +
 	"FROM patient_item, encounter, patient " +
 	"WHERE encounter.id = patient_item.encounter_id " +
@@ -1295,6 +1310,22 @@ SQLException, ObjectNotFoundException {
 		e.printStackTrace();
 		
 	}
+	
+	
+	// dropping indexes we inserted
+	 
+	/*   ps = conn.prepareStatement("ALTER TABLE encounter DROP  INDEX MeshEIndex");
+	   ps.executeUpdate();
+	   
+	   ps = conn.prepareStatement("ALTER TABLE  patient_item DROP  INDEX MeshPIIndex");
+	   ps.executeUpdate();
+	  
+	   ps = conn.prepareStatement("ALTER TABLE  patient DROP  INDEX MeshPTIndex");
+       ps.executeUpdate(); */
+       
+       
+	
+      // log.debug(" we have dropped the indexes ");
 	
 
 	
