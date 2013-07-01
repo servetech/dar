@@ -1233,7 +1233,7 @@ SQLException, ObjectNotFoundException {
 	
 	//inserting indexes for data normalization.
 		
- 	   ps = conn.prepareStatement("CREATE INDEX MeshEIndex ON encounter (id,patient_id)");
+ 	  /* ps = conn.prepareStatement("CREATE INDEX MeshEIndex ON encounter (id,patient_id)");
 	   ps.executeUpdate();
 	    
 	   ps = conn.prepareStatement("CREATE INDEX MeshPIIndex ON patient_item (encounter_id)");
@@ -1241,8 +1241,7 @@ SQLException, ObjectNotFoundException {
 	  
        ps = conn.prepareStatement("CREATE INDEX MeshPTIndex ON patient (id)");
 	
-	   ps.executeUpdate(); 
-	   
+	   ps.executeUpdate(); */
 	
 	sql = "SELECT item_id, SUM(patient_item.dispensed) AS dispensed " +
 	"FROM patient_item, encounter, patient " +
