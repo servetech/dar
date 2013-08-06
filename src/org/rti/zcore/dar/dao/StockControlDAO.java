@@ -83,7 +83,7 @@ public class StockControlDAO {
         				//expiredStockItems.add(stock);
         				stockReport.setExpired(Boolean.TRUE);
         				stockReport.setExpiryDate(stock.getExpiry_date());
-        				//stockReport.setName(stock.getNotes());
+        				stockReport.setName(stock.getNotes());
         			}
     			}
     		}
@@ -291,7 +291,7 @@ public class StockControlDAO {
 						stock = new StockControl();
 						stock.setExpiry_date(expiryDate);
 					}
-					//stock.setNotes(itemName);
+					stock.setNotes(itemName);
 					stock.setItem_id(itemId);
 				} catch (ObjectNotFoundException e) {
 					//itemName = "Deleted Item " + itemId;
@@ -397,7 +397,7 @@ public class StockControlDAO {
 		if (stock!= null && stock.getNotes() != null) {
 			stockReport.setExpired(Boolean.TRUE);
 			stockReport.setExpiryDate(stock.getExpiry_date());
-			//stockReport.setName(stock.getNotes());
+			stockReport.setName(stock.getNotes());
 		}
 		balanceMap.put(itemId, stockReport);
 		// refreshes the StockAlertList.

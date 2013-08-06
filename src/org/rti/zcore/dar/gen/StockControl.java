@@ -41,7 +41,7 @@ private transient Integer received;	//received field2238
 private transient Integer pos_adjust;	//pos_adjust field2246
 private transient Integer neg_adjust;	//neg_adjust field2247
 private transient Integer losses;	//losses field2245
-private Integer notes;	//notes field2237
+private String notes;	//notes field2237
 private Integer balance;	//balance field2248
 private Long last_patient_item_id;	//last_patient_item_id field2249
 private Integer computedBalance;	//computedBalance field2285
@@ -174,11 +174,11 @@ private static Log log = LogFactory.getFactory().getInstance(StockControlDAO.cla
   * @return
   * @hibernate.property column="notes"
   */
-    public Integer getNotes() {
+    public String getNotes() {
         return this.notes;
     }
 
-    public void setNotes(Integer notes) {
+    public void setNotes(String notes) {
         this.notes = notes;
         log.debug(" we are setting notes in stock control : " + notes ); 
     }
